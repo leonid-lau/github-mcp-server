@@ -34,3 +34,4 @@ require (
 )
 
 // personal fork - tracking upstream github/github-mcp-server
+// TODO: explore upgrading go-github to v68 when it stabilizes
