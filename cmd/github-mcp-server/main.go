@@ -24,8 +24,8 @@ func main() {
 
 func rootCmd() *cobra.Command {
 	var (
-		token   string
-		logFile string
+		token    string
+		logFile  string
 		readOnly bool
 	)
 
@@ -39,7 +39,9 @@ func rootCmd() *cobra.Command {
 	}
 
 	cmd.Flags().StringVar(&token, "token", os.Getenv("GITHUB_PERSONAL_ACCESS_TOKEN"), "GitHub personal access token")
-	cmd.Flags().StringVar(&logFile, "log-file", "", "Path to log file (default: stderr)")
+	// Default log file to ~/github-mcp-server.log for easier local debugging
+	defaultLogFile := os.Getenv("GITHUB_MCP_LOG_FILE")
+	cmd.Flags().StringVar(&logFile, "log-file", defaultLogFile, "Path to log file (default: stderr, or $GITHUB_MCP_LOG_FILE)")
 	cmd.Flags().BoolVar(&readOnly, "read-only", false, "Restrict server to read-only operations")
 
 	cmd.AddCommand(versionCmd())
