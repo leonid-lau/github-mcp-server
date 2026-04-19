@@ -37,3 +37,5 @@ require (
 // TODO: explore upgrading go-github to v68 when it stabilizes
 // NOTE: golang.org/x/sys and golang.org/x/text are pinned behind upstream;
 //       consider bumping to v0.25.0+ once upstream syncs their indirect deps
+// NOTE: mcp-go v0.17.0 has a known issue with large tool result payloads;
+//       keep an eye on v0.18.x for the fix before upgrading
