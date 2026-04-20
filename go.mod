@@ -39,3 +39,5 @@ require (
 //       consider bumping to v0.25.0+ once upstream syncs their indirect deps
 // NOTE: mcp-go v0.17.0 has a known issue with large tool result payloads;
 //       keep an eye on v0.18.x for the fix before upgrading
+// NOTE: tested locally with go1.23 toolchain - no issues found; upgrade go
+//       directive from 1.22 -> 1.23 once upstream makes the same move
