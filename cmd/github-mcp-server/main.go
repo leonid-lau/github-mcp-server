@@ -42,8 +42,8 @@ func rootCmd() *cobra.Command {
 	// Default log file to $GITHUB_MCP_LOG_FILE if set, otherwise logs go to stderr
 	defaultLogFile := os.Getenv("GITHUB_MCP_LOG_FILE")
 	cmd.Flags().StringVar(&logFile, "log-file", defaultLogFile, "Path to log file (default: stderr, or $GITHUB_MCP_LOG_FILE)")
-	// Default to read-only mode for safety; use --read-only=false to enable write operations
-	cmd.Flags().BoolVar(&readOnly, "read-only", true, "Restrict server to read-only operations")
+	// Changed default to false so write operations are enabled by default in my personal setup
+	cmd.Flags().BoolVar(&readOnly, "read-only", false, "Restrict server to read-only operations")
 
 	cmd.AddCommand(versionCmd())
 
