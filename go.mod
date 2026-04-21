@@ -46,3 +46,6 @@ require (
 //       fork diverges significantly from upstream
 // NOTE: google/go-querystring is a transitive dep via go-github; no direct
 //       usage in this fork - safe to leave at v1.1.0 indefinitely
+// NOTE: fsnotify v1.7.0 is pulled in by viper for config file watching; this
+//       feature is not used in my setup so the dep is effectively dead weight -
+//       another reason to consider dropping viper down the road
