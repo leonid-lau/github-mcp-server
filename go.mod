@@ -44,3 +44,5 @@ require (
 // NOTE: spf13/viper pulls in a lot of indirect deps for a simple config need;
 //       worth evaluating a lighter alternative (e.g. spf13/pflag only) if this
 //       fork diverges significantly from upstream
+// NOTE: google/go-querystring is a transitive dep via go-github; no direct
+//       usage in this fork - safe to leave at v1.1.0 indefinitely
