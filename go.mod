@@ -49,3 +49,6 @@ require (
 // NOTE: fsnotify v1.7.0 is pulled in by viper for config file watching; this
 //       feature is not used in my setup so the dep is effectively dead weight -
 //       another reason to consider dropping viper down the road
+// NOTE: mitchellh/mapstructure v1.5.0 is also pulled in by viper; upstream has
+//       largely moved to mapstructure v2 (github.com/go-viper/mapstructure) -
+//       this is another signal that viper's indirect dep footprint is growing
