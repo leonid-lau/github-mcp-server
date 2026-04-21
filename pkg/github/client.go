@@ -33,12 +33,17 @@ func WithBaseURL(baseURL string) ClientOption {
 // NewClient creates a new GitHub API client using the provided token.
 // If token is empty, it falls back to the GITHUB_TOKEN environment variable.
 // Also checks GH_TOKEN as a fallback, which is used by the GitHub CLI.
+// Additionally checks GITHUB_PERSONAL_ACCESS_TOKEN as a fallback, which
+// is a common name used in personal scripts and dotfiles.
 func NewClient(token string, opts ...ClientOption) (*Client, error) {
 	if token == "" {
 		token = os.Getenv("GITHUB_TOKEN")
 	}
 	if token == "" {
 		token = os.Getenv("GH_TOKEN")
+	}
+	if token == "" {
+		token = os.Getenv("GITHUB_PERSONAL_ACCESS_TOKEN")
 	}
 	if token == "" {
 		return nil, fmt.Errorf("GitHub token is required: set GITHUB_TOKEN environment variable or provide a token")
