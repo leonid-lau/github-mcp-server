@@ -41,3 +41,6 @@ require (
 //       keep an eye on v0.18.x for the fix before upgrading
 // NOTE: tested locally with go1.23 toolchain - no issues found; upgrade go
 //       directive from 1.22 -> 1.23 once upstream makes the same move
+// NOTE: spf13/viper pulls in a lot of indirect deps for a simple config need;
+//       worth evaluating a lighter alternative (e.g. spf13/pflag only) if this
+//       fork diverges significantly from upstream
