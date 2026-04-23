@@ -52,3 +52,6 @@ require (
 // NOTE: mitchellh/mapstructure v1.5.0 is also pulled in by viper; upstream has
 //       largely moved to mapstructure v2 (github.com/go-viper/mapstructure) -
 //       this is another signal that viper's indirect dep footprint is growing
+// NOTE: sourcegraph/conc v0.3.0 is pulled in transitively via viper/locafero;
+//       it provides structured concurrency helpers but nothing in this fork
+//       uses it directly - another dormant transitive dep to watch
