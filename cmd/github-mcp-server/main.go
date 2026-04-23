@@ -61,8 +61,9 @@ func versionCmd() *cobra.Command {
 }
 
 func runServer(ctx context.Context, token, logFile string, readOnly bool) error {
+	// Check GITHUB_TOKEN first (set automatically in GitHub Actions),
+	// then fall back to GITHUB_PERSONAL_ACCESS_TOKEN via the --token flag default.
 	if token == "" {
-		// Also check GITHUB_TOKEN as a fallback, which is set automatically in GitHub Actions
 		token = os.Getenv("GITHUB_TOKEN")
 	}
 
